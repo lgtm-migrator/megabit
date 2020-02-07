@@ -1,0 +1,65 @@
+{
+  "name": "megabit",
+  "version": "1.0.0-alpha.0",
+  "description": "Connect real things with Node.js",
+  "main": "cjs/index.js",
+  "module": "esm/index.js",
+  "types": "cjs/index.d.js",
+  "files": [
+    "cjs",
+    "esm"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kou029w/megabit.git"
+  },
+  "author": "Kohei Watanabe <kou029w@gmail.com>",
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
+  "dependencies": {
+    "@chirimen/ads1015": "~1",
+    "@chirimen/adt7410": "~1",
+    "@chirimen/gp2y0e03": "~1",
+    "@chirimen/grove-accelerometer": "~1",
+    "@chirimen/grove-gesture": "~1",
+    "@chirimen/grove-light": "~1",
+    "@chirimen/grove-oled-display": "~1",
+    "@chirimen/grove-touch": "~1",
+    "@chirimen/pca9685": "~1",
+    "@chirimen/s11059": "~1",
+    "@chirimen/veml6070": "~1",
+    "@chirimen/vl53l0x": "~1",
+    "node-web-gpio": "~1",
+    "node-web-i2c": "~1"
+  },
+  "devDependencies": {
+    "@types/node": "~12",
+    "npm-run-all": "~4",
+    "typedoc": "~0.16",
+    "typescript": "~3.7"
+  },
+  "scripts": {
+    "doc": "typedoc --tsconfig tsconfig.base.json src",
+    "build": "run-p build:*",
+    "build:cjs": "tsc -p tsconfig.cjs.json",
+    "build:esm": "tsc -p tsconfig.esm.json"
+  },
+  "keywords": [
+    "gpio",
+    "hardware",
+    "i2c",
+    "iot",
+    "linux",
+    "pi",
+    "raspberry pi",
+    "raspberry",
+    "raspi",
+    "robot",
+    "robotics",
+    "robots",
+    "rpi",
+    "smbus"
+  ]
+}

@@ -1,0 +1,35 @@
+import Device from "@chirimen/grove-touch";
+import { ReadableDevice } from "./Device";
+import { I2CPort, i2c } from "./i2c";
+
+/** @type true if touched by the finger, false otherwise */
+type Touched = [
+  boolean,
+  boolean,
+  boolean,
+  boolean,
+  boolean,
+  boolean,
+  boolean,
+  boolean,
+  boolean,
+  boolean,
+  boolean,
+  boolean
+];
+
+export function mpr121(
+  bus: I2CPort = i2c(),
+  address: number = 0x5a
+): ReadableDevice<Touched> {
+  const device = new Device(bus, address);
+
+  return {
+    async read(): Promise<Touched> {
+      if (device.i2cSlave == null) await device.init();
+      return device.read();
+    }
+  };
+}
+
+export default mpr121;
