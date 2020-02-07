@@ -4,6 +4,7 @@
     "target": "esnext",
     "moduleResolution": "node",
     "allowJs": true,
+    "checkJs": true,
     "declaration": true,
     "noImplicitThis": true,
     "alwaysStrict": true,
