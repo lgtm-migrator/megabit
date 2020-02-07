@@ -37,7 +37,7 @@ export class GPIO extends GPIOPort {
 }
 
 export function gpio(pin: number) {
-  return new GPIOPort(pin);
+  return new GPIO(pin);
 }
 
 export default gpio;
