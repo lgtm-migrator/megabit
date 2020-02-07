@@ -1,12 +1,12 @@
 import Device from "@chirimen/grove-light";
 import { ReadableDevice } from "./Device";
-import { I2CPort, i2c } from "./i2c";
+import { I2C, i2c } from "./i2c";
 
 /** @type Illuminance (lx) */
 type Illuminance = number;
 
 export function tsl2561(
-  bus: I2CPort = i2c(),
+  bus: I2C = i2c(),
   address: number = 0x29
 ): ReadableDevice<Illuminance> {
   const device = new Device(bus, address);

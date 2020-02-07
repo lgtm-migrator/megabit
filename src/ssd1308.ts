@@ -1,9 +1,9 @@
 import Device from "@chirimen/grove-oled-display";
 import { WritableDevice } from "./Device";
-import { I2CPort, i2c } from "./i2c";
+import { I2C, i2c } from "./i2c";
 
 export function ssd1308(
-  bus: I2CPort = i2c(),
+  bus: I2C = i2c(),
   address: number = 0x3c
 ): WritableDevice<boolean | number | string> {
   const device = new Device(bus, address);

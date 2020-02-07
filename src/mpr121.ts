@@ -1,6 +1,6 @@
 import Device from "@chirimen/grove-touch";
 import { ReadableDevice } from "./Device";
-import { I2CPort, i2c } from "./i2c";
+import { I2C, i2c } from "./i2c";
 
 /** @type true if touched by the finger, false otherwise */
 type Touched = [
@@ -19,7 +19,7 @@ type Touched = [
 ];
 
 export function mpr121(
-  bus: I2CPort = i2c(),
+  bus: I2C = i2c(),
   address: number = 0x5a
 ): ReadableDevice<Touched> {
   const device = new Device(bus, address);

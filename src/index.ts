@@ -7,7 +7,7 @@ export {
   default as gpio
 } from "./gpio";
 
-export { I2CSlaveDevice, requestI2CAccess, default as i2c } from "./i2c";
+export { I2C, I2CSlaveDevice, requestI2CAccess, default as i2c } from "./i2c";
 
 export { default as ads1015 } from "./ads1015";
 export { default as adt7410 } from "./adt7410";

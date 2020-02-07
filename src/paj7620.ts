@@ -1,6 +1,6 @@
 import Device from "@chirimen/grove-gesture";
 import { ReadableDevice } from "./Device";
-import { I2CPort, i2c } from "./i2c";
+import { I2C, i2c } from "./i2c";
 
 type Direction =
   | ""
@@ -14,7 +14,7 @@ type Direction =
   | "counterclockwise";
 
 export function paj7620(
-  bus: I2CPort = i2c(),
+  bus: I2C = i2c(),
   address: number = 0x73
 ): ReadableDevice<Direction> {
   const device = new Device(bus, address);

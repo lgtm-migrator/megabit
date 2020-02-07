@@ -1,12 +1,12 @@
 import Device from "@chirimen/s11059";
 import { ReadableDevice } from "./Device";
-import { I2CPort, i2c } from "./i2c";
+import { I2C, i2c } from "./i2c";
 
 /** @type 8-bit RGB */
 type RGB = [number, number, number];
 
 export function s11059(
-  bus: I2CPort = i2c(),
+  bus: I2C = i2c(),
   address: number = 0x2a
 ): ReadableDevice<RGB> {
   const device = new Device(bus, address);

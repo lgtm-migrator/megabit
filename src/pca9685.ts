@@ -1,6 +1,6 @@
 import Device from "@chirimen/pca9685";
 import { WritableDevice } from "./Device";
-import { I2CPort, i2c } from "./i2c";
+import { I2C, i2c } from "./i2c";
 
 type Channel =
   | 0
@@ -26,7 +26,7 @@ type Channel =
  * @param angleRange deg
  */
 export function pca9685(
-  bus: I2CPort = i2c(),
+  bus: I2C = i2c(),
   address: number = 0x40,
   channel: Channel = 0,
   minPulse?: number,
