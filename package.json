@@ -1,6 +1,6 @@
 {
   "name": "megabit",
-  "version": "1.0.0-alpha.0",
+  "version": "1.0.0-alpha.1",
   "description": "Connect real things with Node.js",
   "main": "cjs/index.js",
   "module": "esm/index.js",
