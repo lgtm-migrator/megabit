@@ -17,7 +17,6 @@
     "noUnusedParameters": true
   },
   "typedocOptions": {
-    "mode": "file",
-    "out": "docs"
+    "mode": "file"
   }
 }
