@@ -412,9 +412,9 @@ node-web-gpio@~1:
   integrity sha512-bNYPeLK+tBBOE92Hc7B+5n4dEMEbH+Ai3toQk3Fc2YqaR1GFhTN6zSqHT6bIjmjvJSHsWE2xKOrcAL2ge+2qpQ==
 
 node-web-i2c@~1:
-  version "1.1.2"
-  resolved "https://registry.yarnpkg.com/node-web-i2c/-/node-web-i2c-1.1.2.tgz#9f24b5d1580832689b2c2719d33e50b14b43150d"
-  integrity sha512-q7mk4pcqXbq7rxLtagtMZ1jNE1S0acA4GMmHju8PSaI5xvbcwg/iKPs4lFqzpyyalbiNo8g4QIbSjVPQyZjghw==
+  version "1.1.3"
+  resolved "https://registry.yarnpkg.com/node-web-i2c/-/node-web-i2c-1.1.3.tgz#30dbdcc8b56a8ec07c2ac0b8e3350e6586451c0e"
+  integrity sha512-Z7dU6gXGBtguREOy0CW/s/J4I5gkS3BXN6QLtMp9DocPxpxRzAG9fksSW/GIIuCn//RaP8glfKyKFtLJcn0Slg==
   dependencies:
     i2c-bus "~5"
 
