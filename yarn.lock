@@ -52,6 +52,11 @@
   resolved "https://registry.yarnpkg.com/@chirimen/s11059/-/s11059-1.0.2.tgz#d27e1d205975296e28348fc5d8c17a573d23364d"
   integrity sha512-qj9Vp9pxEsL5XF1bM374xAWIpDJFnM3kx03UZnkZzHI76RG03+ghoh6iNu8eicy2fM55LIForUV+ZQDNcqOy1A==
 
+"@chirimen/sht30@~1":
+  version "1.0.3"
+  resolved "https://registry.yarnpkg.com/@chirimen/sht30/-/sht30-1.0.3.tgz#e401ded73d3d70f936ac90f5b67ebfde01975682"
+  integrity sha512-S6LUFYjSdIPSaK8RukEYD+UKS4yKpiFfMbUK9m9Phbsa704SQAvo+bUtbPqJko+XZX8lADXr12BdEW8QrLl+Qw==
+
 "@chirimen/veml6070@~1":
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/@chirimen/veml6070/-/veml6070-1.0.0.tgz#407fdef1f1a6017196879b90fad8858eb20ad33a"

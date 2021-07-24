@@ -17,6 +17,7 @@ export { default as mpr121 } from "./mpr121";
 export { default as paj7620 } from "./paj7620";
 export { default as pca9685 } from "./pca9685";
 export { default as s11059 } from "./s11059";
+export { default as sht30 } from "./sht30";
 export { default as ssd1308 } from "./ssd1308";
 export { default as tsl2561 } from "./tsl2561";
 export { default as veml6070 } from "./veml6070";

@@ -25,11 +25,12 @@ blink();
 ### I<sup>2</sup>C Example
 
 ```js
-const { adt7410 } = require("megabit");
+const { sht30 } = require("megabit");
 
 async function measure() {
-  const temperature = await adt7410().read();
-  console.log(`Temperature: ${temperature} ℃`);
+  const { humidity, temperature } = await sht30().read();
+  console.log(`Humidity: ${humidity.toFixed(2)}%`);
+  console.log(`Temperature: ${temperature.toFixed(2)} ℃`);
 }
 
 measure();
@@ -51,6 +52,7 @@ measure();
 | PAJ7620  | Gesture Recognition Sensor                   | [paj7620](https://kou029w.github.io/megabit/globals.html#paj7620)   |
 | PCA9685  | 16-Channel 12-Bit PWM/Servo Driver           | [pca9685](https://kou029w.github.io/megabit/globals.html#pca9685)   |
 | S11059   | Color Sensor                                 | [s11059](https://kou029w.github.io/megabit/globals.html#s11059)     |
+| SHT30    | Humidity and Temperature Sensor              | [sht30](https://kou029w.github.io/megabit/globals.html#sht30)       |
 | SSD1306  | 128x64 Dot Matrix OLED                       | [ssd1306](https://kou029w.github.io/megabit/globals.html#ssd1306)   |
 | SSD1308  | 128x64 Dot Matrix OLED                       | [ssd1308](https://kou029w.github.io/megabit/globals.html#ssd1308)   |
 | TSL2561  | Ambient Light Sensor                         | [tsl2561](https://kou029w.github.io/megabit/globals.html#tsl2561)   |

@@ -1,6 +1,4 @@
-export interface ReadableDevice<
-  T extends boolean | number | string | boolean[] | number[]
-> {
+export interface ReadableDevice<T> {
   read(): Promise<T>;
 }
 

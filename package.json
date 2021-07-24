@@ -29,6 +29,7 @@
     "@chirimen/grove-touch": "~1",
     "@chirimen/pca9685": "~1",
     "@chirimen/s11059": "~1",
+    "@chirimen/sht30": "~1",
     "@chirimen/veml6070": "~1",
     "@chirimen/vl53l0x": "~1",
     "node-web-gpio": "~1",
