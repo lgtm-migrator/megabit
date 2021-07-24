@@ -2,8 +2,8 @@ import Device from "@chirimen/adt7410";
 import { ReadableDevice } from "./Device";
 import { I2C, i2c } from "./i2c";
 
-/** @type Temperature (°C) */
-type Temperature = number;
+/** Temperature (°C) */
+export type Temperature = number;
 
 export function adt7410(
   bus: I2C = i2c(),

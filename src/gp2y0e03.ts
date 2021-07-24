@@ -2,8 +2,8 @@ import Device from "@chirimen/gp2y0e03";
 import { ReadableDevice } from "./Device";
 import { I2C, i2c } from "./i2c";
 
-/** @type Distance (cm) */
-type Distance = number;
+/** Distance (cm) */
+export type Distance = number;
 
 export function gp2y0e03(
   bus: I2C = i2c(),

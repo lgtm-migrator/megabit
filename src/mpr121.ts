@@ -2,8 +2,8 @@ import Device from "@chirimen/grove-touch";
 import { ReadableDevice } from "./Device";
 import { I2C, i2c } from "./i2c";
 
-/** @type true if touched by the finger, false otherwise */
-type Touched = [
+/** true if touched by the finger, false otherwise */
+export type Touched = [
   boolean,
   boolean,
   boolean,

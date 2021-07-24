@@ -2,8 +2,8 @@ import Device from "@chirimen/s11059";
 import { ReadableDevice } from "./Device";
 import { I2C, i2c } from "./i2c";
 
-/** @type 8-bit RGB */
-type RGB = [number, number, number];
+/** 8-bit RGB */
+export type RGB = [number, number, number];
 
 export function s11059(
   bus: I2C = i2c(),

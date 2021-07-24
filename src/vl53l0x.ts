@@ -2,11 +2,11 @@ import Device from "@chirimen/vl53l0x";
 import { ReadableDevice } from "./Device";
 import { I2C, i2c } from "./i2c";
 
-/** @type Enable long range mode (max 2200mm) */
-type EnableLongRangeMode = Boolean;
+/** Enable long range mode (max 2200mm) */
+export type EnableLongRangeMode = Boolean;
 
-/** @type Distance (mm) */
-type Distance = number;
+/** Distance (mm) */
+export type Distance = number;
 
 /** max 1200 mm / 2200 mm (long range mode) */
 export function vl53l0x(

@@ -2,8 +2,8 @@ import Device from "@chirimen/grove-accelerometer";
 import { ReadableDevice } from "./Device";
 import { I2C, i2c } from "./i2c";
 
-/** @type Acceleration (g) */
-type Acceleration = [number, number, number];
+/** Acceleration (g) */
+export type Acceleration = [number, number, number];
 
 export function adxl345(
   bus: I2C = i2c(),

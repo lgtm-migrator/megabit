@@ -2,14 +2,14 @@ import Device from "@chirimen/sht30";
 import { ReadableDevice } from "./Device";
 import { I2C, i2c } from "./i2c";
 
-/** @type Humidity (%) */
-type Humidity = number;
+/** Humidity (%) */
+export type Humidity = number;
 
-/** @type Temperature (°C) */
-type Temperature = number;
+/** Temperature (°C) */
+export type Temperature = number;
 
-/** @type Values */
-type Values = {
+/** Values */
+export type Values = {
   humidity: Humidity;
   temperature: Temperature;
 };

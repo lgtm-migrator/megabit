@@ -2,8 +2,8 @@ import Device from "@chirimen/grove-light";
 import { ReadableDevice } from "./Device";
 import { I2C, i2c } from "./i2c";
 
-/** @type Illuminance (lx) */
-type Illuminance = number;
+/** Illuminance (lx) */
+export type Illuminance = number;
 
 export function tsl2561(
   bus: I2C = i2c(),
