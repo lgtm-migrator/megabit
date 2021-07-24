@@ -1,11 +1,12 @@
 {
   "name": "megabit",
-  "version": "1.0.0-beta.0",
+  "version": "1.0.0-beta.1",
   "description": "Connect real things with Node.js",
   "main": "cjs/index.js",
   "type": "commonjs",
   "exports": {
-    "import": "./esm/index.js"
+    "import": "./esm/index.js",
+    "require": "./cjs/index.js"
   },
   "module": "esm/index.js",
   "types": "cjs/index.d.js",
