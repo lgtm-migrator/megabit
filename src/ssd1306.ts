@@ -27,4 +27,4 @@ export function ssd1306(
   };
 }
 
-export default ssd1308;
+export default ssd1306;
