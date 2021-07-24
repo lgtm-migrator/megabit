@@ -4,16 +4,17 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<title>megabit</title>
-	<meta name="description" content="">
+	<meta name="description" content="Documentation for megabit">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="assets/css/main.css">
+	<script async src="assets/js/search.js" id="search-script"></script>
 </head>
 <body>
 <header>
 	<div class="tsd-page-toolbar">
 		<div class="container">
 			<div class="table-wrap">
-				<div class="table-cell" id="tsd-search" data-index="assets/js/search.js" data-base=".">
+				<div class="table-cell" id="tsd-search" data-index="assets/js/search.json" data-base=".">
 					<div class="field">
 						<label for="tsd-search-field" class="tsd-widget search no-caption">Search</label>
 						<input id="tsd-search-field" type="text" />
@@ -40,8 +41,6 @@
 							<label class="tsd-widget" for="tsd-filter-inherited">Inherited</label>
 							<input type="checkbox" id="tsd-filter-externals" checked />
 							<label class="tsd-widget" for="tsd-filter-externals">Externals</label>
-							<input type="checkbox" id="tsd-filter-only-exported" />
-							<label class="tsd-widget" for="tsd-filter-only-exported">Only exported</label>
 						</div>
 					</div>
 					<a href="#" class="tsd-widget menu no-caption" data-toggle="menu">Menu</a>
@@ -51,11 +50,6 @@
 	</div>
 	<div class="tsd-page-title">
 		<div class="container">
-			<ul class="tsd-breadcrumb">
-				<li>
-					<a href="globals.html">Globals</a>
-				</li>
-			</ul>
 			<h1>megabit</h1>
 		</div>
 	</div>
@@ -74,208 +68,185 @@
 				<a href="#gpio-example" id="gpio-example" style="color: inherit; text-decoration: none;">
 					<h3>GPIO Example</h3>
 				</a>
-				<pre><code class="language-js"><span class="hljs-keyword">const</span> { gpio } = <span class="hljs-built_in">require</span>(<span class="hljs-string">"megabit"</span>);
-<span class="hljs-keyword">const</span> sleep = <span class="hljs-built_in">require</span>(<span class="hljs-string">"util"</span>).promisify(setTimeout);
+				<pre><code class="language-js"><span style="color: #0000FF">const</span><span style="color: #000000"> { </span><span style="color: #0070C1">gpio</span><span style="color: #000000"> } = </span><span style="color: #795E26">require</span><span style="color: #000000">(</span><span style="color: #A31515">&quot;megabit&quot;</span><span style="color: #000000">);</span>
+<span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">sleep</span><span style="color: #000000"> = </span><span style="color: #795E26">require</span><span style="color: #000000">(</span><span style="color: #A31515">&quot;util&quot;</span><span style="color: #000000">).</span><span style="color: #795E26">promisify</span><span style="color: #000000">(</span><span style="color: #001080">setTimeout</span><span style="color: #000000">);</span>
 
-<span class="hljs-keyword">async</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">blink</span>(<span class="hljs-params"></span>) </span>{
-  <span class="hljs-keyword">for</span> (;;) {
-    <span class="hljs-keyword">await</span> gpio(<span class="hljs-number">26</span>).write(<span class="hljs-number">1</span>);
-    <span class="hljs-keyword">await</span> sleep(<span class="hljs-number">1000</span>);
-    <span class="hljs-keyword">await</span> gpio(<span class="hljs-number">26</span>).write(<span class="hljs-number">0</span>);
-    <span class="hljs-keyword">await</span> sleep(<span class="hljs-number">1000</span>);
-  }
-}
+<span style="color: #0000FF">async</span><span style="color: #000000"> </span><span style="color: #0000FF">function</span><span style="color: #000000"> </span><span style="color: #795E26">blink</span><span style="color: #000000">() {</span>
+<span style="color: #000000">  </span><span style="color: #AF00DB">for</span><span style="color: #000000"> (;;) {</span>
+<span style="color: #000000">    </span><span style="color: #AF00DB">await</span><span style="color: #000000"> </span><span style="color: #795E26">gpio</span><span style="color: #000000">(</span><span style="color: #098658">26</span><span style="color: #000000">).</span><span style="color: #795E26">write</span><span style="color: #000000">(</span><span style="color: #098658">1</span><span style="color: #000000">);</span>
+<span style="color: #000000">    </span><span style="color: #AF00DB">await</span><span style="color: #000000"> </span><span style="color: #795E26">sleep</span><span style="color: #000000">(</span><span style="color: #098658">1000</span><span style="color: #000000">);</span>
+<span style="color: #000000">    </span><span style="color: #AF00DB">await</span><span style="color: #000000"> </span><span style="color: #795E26">gpio</span><span style="color: #000000">(</span><span style="color: #098658">26</span><span style="color: #000000">).</span><span style="color: #795E26">write</span><span style="color: #000000">(</span><span style="color: #098658">0</span><span style="color: #000000">);</span>
+<span style="color: #000000">    </span><span style="color: #AF00DB">await</span><span style="color: #000000"> </span><span style="color: #795E26">sleep</span><span style="color: #000000">(</span><span style="color: #098658">1000</span><span style="color: #000000">);</span>
+<span style="color: #000000">  }</span>
+<span style="color: #000000">}</span>
 
-blink();</code></pre>
-				<a href="#isup2supc-example" id="isup2supc-example" style="color: inherit; text-decoration: none;">
+<span style="color: #795E26">blink</span><span style="color: #000000">();</span>
+</code></pre>
+				<a href="#i2c-example" id="i2c-example" style="color: inherit; text-decoration: none;">
 					<h3>I<sup>2</sup>C Example</h3>
 				</a>
-				<pre><code class="language-js"><span class="hljs-keyword">const</span> { adt7410 } = <span class="hljs-built_in">require</span>(<span class="hljs-string">"megabit"</span>);
+				<pre><code class="language-js"><span style="color: #0000FF">const</span><span style="color: #000000"> { </span><span style="color: #0070C1">sht30</span><span style="color: #000000"> } = </span><span style="color: #795E26">require</span><span style="color: #000000">(</span><span style="color: #A31515">&quot;megabit&quot;</span><span style="color: #000000">);</span>
 
-<span class="hljs-keyword">async</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">measure</span>(<span class="hljs-params"></span>) </span>{
-  <span class="hljs-keyword">const</span> temperature = <span class="hljs-keyword">await</span> adt7410().read();
-  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">`Temperature: <span class="hljs-subst">${temperature}</span> ℃`</span>);
-}
+<span style="color: #0000FF">async</span><span style="color: #000000"> </span><span style="color: #0000FF">function</span><span style="color: #000000"> </span><span style="color: #795E26">measure</span><span style="color: #000000">() {</span>
+<span style="color: #000000">  </span><span style="color: #0000FF">const</span><span style="color: #000000"> { </span><span style="color: #0070C1">humidity</span><span style="color: #000000">, </span><span style="color: #0070C1">temperature</span><span style="color: #000000"> } = </span><span style="color: #AF00DB">await</span><span style="color: #000000"> </span><span style="color: #795E26">sht30</span><span style="color: #000000">().</span><span style="color: #795E26">read</span><span style="color: #000000">();</span>
+<span style="color: #000000">  </span><span style="color: #001080">console</span><span style="color: #000000">.</span><span style="color: #795E26">log</span><span style="color: #000000">(</span><span style="color: #A31515">`Humidity: </span><span style="color: #0000FF">${</span><span style="color: #001080">humidity</span><span style="color: #000000FF">.</span><span style="color: #795E26">toFixed</span><span style="color: #000000FF">(</span><span style="color: #098658">2</span><span style="color: #000000FF">)</span><span style="color: #0000FF">}</span><span style="color: #A31515">%`</span><span style="color: #000000">);</span>
+<span style="color: #000000">  </span><span style="color: #001080">console</span><span style="color: #000000">.</span><span style="color: #795E26">log</span><span style="color: #000000">(</span><span style="color: #A31515">`Temperature: </span><span style="color: #0000FF">${</span><span style="color: #001080">temperature</span><span style="color: #000000FF">.</span><span style="color: #795E26">toFixed</span><span style="color: #000000FF">(</span><span style="color: #098658">2</span><span style="color: #000000FF">)</span><span style="color: #0000FF">}</span><span style="color: #A31515"> ℃`</span><span style="color: #000000">);</span>
+<span style="color: #000000">}</span>
 
-measure();</code></pre>
+<span style="color: #795E26">measure</span><span style="color: #000000">();</span>
+</code></pre>
 				<a href="#documents" id="documents" style="color: inherit; text-decoration: none;">
 					<h2>Documents</h2>
 				</a>
 				<p><a href="https://kou029w.github.io/megabit/">Megabit API Documentation</a></p>
+				<a href="#devices" id="devices" style="color: inherit; text-decoration: none;">
+					<h2>Devices</h2>
+				</a>
+				<table>
+					<thead>
+						<tr>
+							<th>Device</th>
+							<th>Description</th>
+							<th>API</th>
+						</tr>
+					</thead>
+					<tbody><tr>
+							<td>ADS1015</td>
+							<td>12-bit Precision Analog to Digital Converter</td>
+							<td><a href="https://kou029w.github.io/megabit/modules/ads1015.html">ads1015</a></td>
+						</tr>
+						<tr>
+							<td>ADT7410</td>
+							<td>High Accuracy Digital Temperature Sensor</td>
+							<td><a href="https://kou029w.github.io/megabit/modules/adt7410.html">adt7410</a></td>
+						</tr>
+						<tr>
+							<td>ADXL345</td>
+							<td>3-axis Accelerometer</td>
+							<td><a href="https://kou029w.github.io/megabit/modules/adxl345.html">adxl345</a></td>
+						</tr>
+						<tr>
+							<td>GP2Y0E03</td>
+							<td>4-50 cm Distance Sensor</td>
+							<td><a href="https://kou029w.github.io/megabit/modules/gp2y0e03.html">gp2y0e03</a></td>
+						</tr>
+						<tr>
+							<td>MPR121</td>
+							<td>Proximity Capacitive Touch Sensor Controller</td>
+							<td><a href="https://kou029w.github.io/megabit/modules/mpr121.html">mpr121</a></td>
+						</tr>
+						<tr>
+							<td>PAJ7620</td>
+							<td>Gesture Recognition Sensor</td>
+							<td><a href="https://kou029w.github.io/megabit/modules/paj7620.html">paj7620</a></td>
+						</tr>
+						<tr>
+							<td>PCA9685</td>
+							<td>16-Channel 12-Bit PWM/Servo Driver</td>
+							<td><a href="https://kou029w.github.io/megabit/modules/pca9685.html">pca9685</a></td>
+						</tr>
+						<tr>
+							<td>S11059</td>
+							<td>Color Sensor</td>
+							<td><a href="https://kou029w.github.io/megabit/modules/s11059.html">s11059</a></td>
+						</tr>
+						<tr>
+							<td>SHT30</td>
+							<td>Humidity and Temperature Sensor</td>
+							<td><a href="https://kou029w.github.io/megabit/modules/sht30.html">sht30</a></td>
+						</tr>
+						<tr>
+							<td>SSD1306</td>
+							<td>128x64 Dot Matrix OLED</td>
+							<td><a href="https://kou029w.github.io/megabit/modules/ssd1306.html">ssd1306</a></td>
+						</tr>
+						<tr>
+							<td>SSD1308</td>
+							<td>128x64 Dot Matrix OLED</td>
+							<td><a href="https://kou029w.github.io/megabit/modules/ssd1308.html">ssd1308</a></td>
+						</tr>
+						<tr>
+							<td>TSL2561</td>
+							<td>Ambient Light Sensor</td>
+							<td><a href="https://kou029w.github.io/megabit/modules/tsl2561.html">tsl2561</a></td>
+						</tr>
+						<tr>
+							<td>VEML6070</td>
+							<td>UV(A) Light Sensor</td>
+							<td><a href="https://kou029w.github.io/megabit/modules/veml6070.html">veml6070</a></td>
+						</tr>
+						<tr>
+							<td>VL53L0X</td>
+							<td>Time of Flight Distance Sensor</td>
+							<td><a href="https://kou029w.github.io/megabit/modules/vl53l0x.html">vl53l0x</a></td>
+						</tr>
+				</tbody></table>
 			</div>
 		</div>
 		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
 			<nav class="tsd-navigation primary">
 				<ul>
-					<li class="globals  ">
-						<a href="globals.html"><em>Globals</em></a>
+					<li class=" ">
+						<a href="modules.html">Modules</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/Device.html">Device</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/ads1015.html">ads1015</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/adt7410.html">adt7410</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/adxl345.html">adxl345</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/gp2y0e03.html">gp2y0e03</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/gpio.html">gpio</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/i2c.html">i2c</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/index.html">index</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/mpr121.html">mpr121</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/paj7620.html">paj7620</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/pca9685.html">pca9685</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/s11059.html">s11059</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/sht30.html">sht30</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/ssd1306.html">ssd1306</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/ssd1308.html">ssd1308</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/tsl2561.html">tsl2561</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/veml6070.html">veml6070</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/vl53l0x.html">vl53l0x</a>
 					</li>
 				</ul>
 			</nav>
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
-					<li class=" tsd-kind-class">
-						<a href="classes/gpio.html" class="tsd-kind-icon">GPIO</a>
-					</li>
-					<li class=" tsd-kind-class tsd-is-external">
-						<a href="classes/gpioaccess.html" class="tsd-kind-icon">GPIOAccess</a>
-					</li>
-					<li class=" tsd-kind-class tsd-is-external">
-						<a href="classes/gpioport.html" class="tsd-kind-icon">GPIOPort</a>
-					</li>
-					<li class=" tsd-kind-class tsd-is-external">
-						<a href="classes/gpioportmap.html" class="tsd-kind-icon">GPIOPort<wbr>Map</a>
-					</li>
-					<li class=" tsd-kind-class">
-						<a href="classes/i2c.html" class="tsd-kind-icon">I2C</a>
-					</li>
-					<li class=" tsd-kind-class tsd-is-external">
-						<a href="classes/i2caccess.html" class="tsd-kind-icon">I2CAccess</a>
-					</li>
-					<li class=" tsd-kind-class tsd-is-external">
-						<a href="classes/i2cport.html" class="tsd-kind-icon">I2CPort</a>
-					</li>
-					<li class=" tsd-kind-class tsd-is-external">
-						<a href="classes/i2cportmap.html" class="tsd-kind-icon">I2CPort<wbr>Map</a>
-					</li>
-					<li class=" tsd-kind-class tsd-is-external">
-						<a href="classes/invalidaccesserror.html" class="tsd-kind-icon">Invalid<wbr>Access<wbr>Error</a>
-					</li>
-					<li class=" tsd-kind-class tsd-is-external">
-						<a href="classes/operationerror.html" class="tsd-kind-icon">Operation<wbr>Error</a>
-					</li>
-					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/gpiochangeevent.html" class="tsd-kind-icon">GPIOChange<wbr>Event</a>
-					</li>
-					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/gpiochangeeventhandler.html" class="tsd-kind-icon">GPIOChange<wbr>Event<wbr>Handler</a>
-					</li>
-					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/i2cslavedevice.html" class="tsd-kind-icon">I2CSlave<wbr>Device</a>
-					</li>
-					<li class=" tsd-kind-interface tsd-has-type-parameter">
-						<a href="interfaces/readabledevice.html" class="tsd-kind-icon">Readable<wbr>Device</a>
-					</li>
-					<li class=" tsd-kind-interface tsd-has-type-parameter">
-						<a href="interfaces/writabledevice.html" class="tsd-kind-icon">Writable<wbr>Device</a>
-					</li>
-					<li class=" tsd-kind-type-alias">
-						<a href="globals.html#acceleration" class="tsd-kind-icon">Acceleration</a>
-					</li>
-					<li class=" tsd-kind-type-alias">
-						<a href="globals.html#channel" class="tsd-kind-icon">Channel</a>
-					</li>
-					<li class=" tsd-kind-type-alias">
-						<a href="globals.html#direction" class="tsd-kind-icon">Direction</a>
-					</li>
-					<li class=" tsd-kind-type-alias tsd-is-external">
-						<a href="globals.html#directionmode" class="tsd-kind-icon">Direction<wbr>Mode</a>
-					</li>
-					<li class=" tsd-kind-type-alias">
-						<a href="globals.html#distance" class="tsd-kind-icon">Distance</a>
-					</li>
-					<li class=" tsd-kind-type-alias">
-						<a href="globals.html#enablelongrangemode" class="tsd-kind-icon">Enable<wbr>Long<wbr>Range<wbr>Mode</a>
-					</li>
-					<li class=" tsd-kind-type-alias tsd-is-external">
-						<a href="globals.html#gpiovalue" class="tsd-kind-icon">GPIOValue</a>
-					</li>
-					<li class=" tsd-kind-type-alias tsd-is-external">
-						<a href="globals.html#i2cslaveaddress" class="tsd-kind-icon">I2CSlave<wbr>Address</a>
-					</li>
-					<li class=" tsd-kind-type-alias">
-						<a href="globals.html#illuminance" class="tsd-kind-icon">Illuminance</a>
-					</li>
-					<li class=" tsd-kind-type-alias tsd-is-external">
-						<a href="globals.html#pinname" class="tsd-kind-icon">Pin<wbr>Name</a>
-					</li>
-					<li class=" tsd-kind-type-alias tsd-is-external">
-						<a href="globals.html#portname" class="tsd-kind-icon">Port<wbr>Name</a>
-					</li>
-					<li class=" tsd-kind-type-alias tsd-is-external">
-						<a href="globals.html#portnumber" class="tsd-kind-icon">Port<wbr>Number</a>
-					</li>
-					<li class=" tsd-kind-type-alias">
-						<a href="globals.html#rgb" class="tsd-kind-icon">RGB</a>
-					</li>
-					<li class=" tsd-kind-type-alias">
-						<a href="globals.html#temperature" class="tsd-kind-icon">Temperature</a>
-					</li>
-					<li class=" tsd-kind-type-alias">
-						<a href="globals.html#touched" class="tsd-kind-icon">Touched</a>
-					</li>
-					<li class=" tsd-kind-type-alias">
-						<a href="globals.html#uva" class="tsd-kind-icon">UVA</a>
-					</li>
-					<li class=" tsd-kind-variable tsd-is-external">
-						<a href="globals.html#gpioportmapsizemax" class="tsd-kind-icon">GPIOPort<wbr>Map<wbr>Size<wbr>Max</a>
-					</li>
-					<li class=" tsd-kind-variable tsd-is-external">
-						<a href="globals.html#i2cportmapsizemax" class="tsd-kind-icon">I2CPort<wbr>Map<wbr>Size<wbr>Max</a>
-					</li>
-					<li class=" tsd-kind-variable tsd-is-external">
-						<a href="globals.html#pollinginterval" class="tsd-kind-icon">Polling<wbr>Interval</a>
-					</li>
-					<li class=" tsd-kind-variable tsd-is-external">
-						<a href="globals.html#sysfsgpiopath" class="tsd-kind-icon">SysfsGPIOPath</a>
-					</li>
-					<li class=" tsd-kind-variable tsd-is-external">
-						<a href="globals.html#uint16max" class="tsd-kind-icon">Uint16<wbr>Max</a>
-					</li>
-					<li class=" tsd-kind-function">
-						<a href="globals.html#ads1015" class="tsd-kind-icon">ads1015</a>
-					</li>
-					<li class=" tsd-kind-function">
-						<a href="globals.html#adt7410" class="tsd-kind-icon">adt7410</a>
-					</li>
-					<li class=" tsd-kind-function">
-						<a href="globals.html#adxl345" class="tsd-kind-icon">adxl345</a>
-					</li>
-					<li class=" tsd-kind-function">
-						<a href="globals.html#gp2y0e03" class="tsd-kind-icon">gp2y0e03</a>
-					</li>
-					<li class=" tsd-kind-function">
-						<a href="globals.html#gpio" class="tsd-kind-icon">gpio</a>
-					</li>
-					<li class=" tsd-kind-function">
-						<a href="globals.html#i2c" class="tsd-kind-icon">i2c</a>
-					</li>
-					<li class=" tsd-kind-function">
-						<a href="globals.html#mpr121" class="tsd-kind-icon">mpr121</a>
-					</li>
-					<li class=" tsd-kind-function">
-						<a href="globals.html#paj7620" class="tsd-kind-icon">paj7620</a>
-					</li>
-					<li class=" tsd-kind-function tsd-is-external">
-						<a href="globals.html#parseuint16" class="tsd-kind-icon">parse<wbr>Uint16</a>
-					</li>
-					<li class=" tsd-kind-function">
-						<a href="globals.html#pca9685" class="tsd-kind-icon">pca9685</a>
-					</li>
-					<li class=" tsd-kind-function tsd-is-external">
-						<a href="globals.html#requestgpioaccess" class="tsd-kind-icon">requestGPIOAccess</a>
-					</li>
-					<li class=" tsd-kind-function tsd-is-external">
-						<a href="globals.html#requesti2caccess" class="tsd-kind-icon">request<wbr>I2CAccess</a>
-					</li>
-					<li class=" tsd-kind-function">
-						<a href="globals.html#s11059" class="tsd-kind-icon">s11059</a>
-					</li>
-					<li class=" tsd-kind-function">
-						<a href="globals.html#ssd1306" class="tsd-kind-icon">ssd1306</a>
-					</li>
-					<li class=" tsd-kind-function">
-						<a href="globals.html#ssd1308" class="tsd-kind-icon">ssd1308</a>
-					</li>
-					<li class=" tsd-kind-function">
-						<a href="globals.html#tsl2561" class="tsd-kind-icon">tsl2561</a>
-					</li>
-					<li class=" tsd-kind-function">
-						<a href="globals.html#veml6070" class="tsd-kind-icon">veml6070</a>
-					</li>
-					<li class=" tsd-kind-function">
-						<a href="globals.html#vl53l0x" class="tsd-kind-icon">vl53l0x</a>
-					</li>
 				</ul>
 			</nav>
 		</div>
@@ -286,57 +257,14 @@ measure();</code></pre>
 		<h2>Legend</h2>
 		<div class="tsd-legend-group">
 			<ul class="tsd-legend">
-				<li class="tsd-kind-module"><span class="tsd-kind-icon">Module</span></li>
-				<li class="tsd-kind-object-literal"><span class="tsd-kind-icon">Object literal</span></li>
-				<li class="tsd-kind-variable"><span class="tsd-kind-icon">Variable</span></li>
 				<li class="tsd-kind-function"><span class="tsd-kind-icon">Function</span></li>
-				<li class="tsd-kind-function tsd-has-type-parameter"><span class="tsd-kind-icon">Function with type parameter</span></li>
-				<li class="tsd-kind-index-signature"><span class="tsd-kind-icon">Index signature</span></li>
 				<li class="tsd-kind-type-alias"><span class="tsd-kind-icon">Type alias</span></li>
-				<li class="tsd-kind-type-alias tsd-has-type-parameter"><span class="tsd-kind-icon">Type alias with type parameter</span></li>
 			</ul>
 			<ul class="tsd-legend">
-				<li class="tsd-kind-enum"><span class="tsd-kind-icon">Enumeration</span></li>
-				<li class="tsd-kind-enum-member"><span class="tsd-kind-icon">Enumeration member</span></li>
-				<li class="tsd-kind-property tsd-parent-kind-enum"><span class="tsd-kind-icon">Property</span></li>
-				<li class="tsd-kind-method tsd-parent-kind-enum"><span class="tsd-kind-icon">Method</span></li>
-			</ul>
-			<ul class="tsd-legend">
-				<li class="tsd-kind-interface"><span class="tsd-kind-icon">Interface</span></li>
 				<li class="tsd-kind-interface tsd-has-type-parameter"><span class="tsd-kind-icon">Interface with type parameter</span></li>
-				<li class="tsd-kind-constructor tsd-parent-kind-interface"><span class="tsd-kind-icon">Constructor</span></li>
-				<li class="tsd-kind-property tsd-parent-kind-interface"><span class="tsd-kind-icon">Property</span></li>
-				<li class="tsd-kind-method tsd-parent-kind-interface"><span class="tsd-kind-icon">Method</span></li>
-				<li class="tsd-kind-index-signature tsd-parent-kind-interface"><span class="tsd-kind-icon">Index signature</span></li>
 			</ul>
 			<ul class="tsd-legend">
 				<li class="tsd-kind-class"><span class="tsd-kind-icon">Class</span></li>
-				<li class="tsd-kind-class tsd-has-type-parameter"><span class="tsd-kind-icon">Class with type parameter</span></li>
-				<li class="tsd-kind-constructor tsd-parent-kind-class"><span class="tsd-kind-icon">Constructor</span></li>
-				<li class="tsd-kind-property tsd-parent-kind-class"><span class="tsd-kind-icon">Property</span></li>
-				<li class="tsd-kind-method tsd-parent-kind-class"><span class="tsd-kind-icon">Method</span></li>
-				<li class="tsd-kind-accessor tsd-parent-kind-class"><span class="tsd-kind-icon">Accessor</span></li>
-				<li class="tsd-kind-index-signature tsd-parent-kind-class"><span class="tsd-kind-icon">Index signature</span></li>
-			</ul>
-			<ul class="tsd-legend">
-				<li class="tsd-kind-constructor tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited constructor</span></li>
-				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited property</span></li>
-				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited method</span></li>
-				<li class="tsd-kind-accessor tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited accessor</span></li>
-			</ul>
-			<ul class="tsd-legend">
-				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-protected"><span class="tsd-kind-icon">Protected property</span></li>
-				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-protected"><span class="tsd-kind-icon">Protected method</span></li>
-				<li class="tsd-kind-accessor tsd-parent-kind-class tsd-is-protected"><span class="tsd-kind-icon">Protected accessor</span></li>
-			</ul>
-			<ul class="tsd-legend">
-				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><span class="tsd-kind-icon">Private property</span></li>
-				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-private"><span class="tsd-kind-icon">Private method</span></li>
-				<li class="tsd-kind-accessor tsd-parent-kind-class tsd-is-private"><span class="tsd-kind-icon">Private accessor</span></li>
-			</ul>
-			<ul class="tsd-legend">
-				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-static"><span class="tsd-kind-icon">Static property</span></li>
-				<li class="tsd-kind-call-signature tsd-parent-kind-class tsd-is-static"><span class="tsd-kind-icon">Static method</span></li>
 			</ul>
 		</div>
 	</div>
@@ -346,6 +274,5 @@ measure();</code></pre>
 </div>
 <div class="overlay"></div>
 <script src="assets/js/main.js"></script>
-<script>if (location.protocol == 'file:') document.write('<script src="assets/js/search.js"><' + '/script>');</script>
 </body>
 </html>
