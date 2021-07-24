@@ -2,7 +2,7 @@ import {
   GPIOPort,
   OperationError,
   InvalidAccessError,
-  requestGPIOAccess
+  requestGPIOAccess,
 } from "node-web-gpio";
 
 export { OperationError, InvalidAccessError, requestGPIOAccess };

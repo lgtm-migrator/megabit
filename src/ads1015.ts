@@ -13,7 +13,7 @@ export function ads1015(
     async read(): Promise<number> {
       if (device.i2cSlave == null) await device.init();
       return device.read(channel);
-    }
+    },
   };
 }
 

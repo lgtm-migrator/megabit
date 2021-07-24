@@ -15,7 +15,7 @@ export function gp2y0e03(
     async read(): Promise<Distance> {
       if (device.i2cSlave == null) await device.init();
       return device.read();
-    }
+    },
   };
 }
 

@@ -23,7 +23,7 @@ export function ssd1308(
         device.drawStringQ(index, 0, message);
       });
       await device.playSequence();
-    }
+    },
   };
 }
 

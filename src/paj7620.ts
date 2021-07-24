@@ -37,7 +37,7 @@ export function paj7620(
         default:
           return "";
       }
-    }
+    },
   };
 }
 

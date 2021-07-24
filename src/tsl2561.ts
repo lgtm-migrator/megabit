@@ -15,7 +15,7 @@ export function tsl2561(
     async read(): Promise<Illuminance> {
       if (device.i2cSlave == null) await device.init();
       return device.read();
-    }
+    },
   };
 }
 

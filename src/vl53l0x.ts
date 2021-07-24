@@ -20,7 +20,7 @@ export function vl53l0x(
     async read(): Promise<Distance> {
       if (device.i2cSlave == null) await device.init(enableLongRangeMode);
       return device.getRange();
-    }
+    },
   };
 }
 

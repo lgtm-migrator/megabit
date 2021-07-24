@@ -15,7 +15,7 @@ export function s11059(
     async read(): Promise<RGB> {
       if (device.i2cSlave == null) await device.init();
       return device.readR8G8B8();
-    }
+    },
   };
 }
 

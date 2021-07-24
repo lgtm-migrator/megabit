@@ -4,7 +4,7 @@ export {
   OperationError,
   InvalidAccessError,
   requestGPIOAccess,
-  default as gpio
+  default as gpio,
 } from "./gpio";
 
 export { I2C, I2CSlaveDevice, requestI2CAccess, default as i2c } from "./i2c";

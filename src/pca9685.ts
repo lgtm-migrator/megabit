@@ -43,7 +43,7 @@ export function pca9685(
       }
 
       await device.setServo(channel, angle);
-    }
+    },
   };
 }
 

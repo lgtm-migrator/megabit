@@ -16,7 +16,7 @@ export function adxl345(
       if (device.i2cSlave == null) await device.init();
       const acc = await device.read();
       return [acc.x, acc.y, acc.z];
-    }
+    },
   };
 }
 

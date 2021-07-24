@@ -15,7 +15,7 @@ export function adt7410(
     async read(): Promise<Temperature> {
       if (device.i2cSlave == null) await device.init();
       return device.read();
-    }
+    },
   };
 }
 

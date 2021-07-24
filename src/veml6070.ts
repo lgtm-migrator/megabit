@@ -14,7 +14,7 @@ export function veml6070(bus: I2C = i2c()): ReadableDevice<number> {
       if (device.i2cSlaveLSB == null || device.i2cSlaveMSB == null)
         await device.init();
       return device.read();
-    }
+    },
   };
 }
 

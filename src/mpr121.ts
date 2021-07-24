@@ -28,7 +28,7 @@ export function mpr121(
     async read(): Promise<Touched> {
       if (device.i2cSlave == null) await device.init();
       return device.read();
-    }
+    },
   };
 }
 
