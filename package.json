@@ -41,7 +41,7 @@
     "@types/node": "~16",
     "npm-run-all": "~4",
     "typedoc": "~0.21",
-    "typescript": "~4.3"
+    "typescript": "~4.4.0"
   },
   "scripts": {
     "doc": "typedoc --tsconfig tsconfig.base.json src",
