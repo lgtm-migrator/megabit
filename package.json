@@ -9,7 +9,7 @@
     "require": "./cjs/index.js"
   },
   "module": "esm/index.js",
-  "types": "cjs/index.d.js",
+  "types": "cjs/index.d.ts",
   "files": [
     "cjs",
     "esm"
