@@ -1,5 +1,7 @@
 # Megabit
 
+[![jsDocs.io](https://img.shields.io/badge/jsDocs.io-reference-blue)](https://www.jsdocs.io/package/megabit)
+
 Connect real things with Node.js
 
 ## Usage
@@ -38,7 +40,7 @@ measure();
 
 ## Documents
 
-[Megabit API Documentation](https://kou029w.github.io/megabit/)
+[Megabit API Reference](https://www.jsdocs.io/package/megabit)
 
 ## Devices
 
